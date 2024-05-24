@@ -1,0 +1,10 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <button mat-raised-button><mat-icon>add</mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+    <ng-container *ngFor="let site of sites">
+        <app-site [data]="site" (click)="goToSite(site)"></app-site>
+    </ng-container>
+</div>

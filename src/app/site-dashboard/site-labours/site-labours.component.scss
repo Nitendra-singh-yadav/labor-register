@@ -1,0 +1,12 @@
+.mat-column-name{
+    border-right: 1px solid black;
+}
+.labour-table{
+    overflow: auto;
+    mat-cell, mat-header-cell{
+        min-width: 70px;
+    }
+mat-row.inactive{
+    background-color: rgb(255 232 222);
+}
+}

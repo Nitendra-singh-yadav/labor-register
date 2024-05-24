@@ -1,0 +1,12 @@
+.container{
+    height: 100%;
+}
+.sidenav-content{
+    height: 100%;
+}
+a.mat-list-active{
+    span.mdc-list-item__content{
+        color: white !important;
+    }
+}
+
