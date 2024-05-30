@@ -1,12 +1,21 @@
-.mat-column-name{
+.mat-column-name {
     border-right: 1px solid black;
 }
-.labour-table{
+
+.labour-table {
     overflow: auto;
-    mat-cell, mat-header-cell{
+
+    mat-cell,
+    mat-header-cell {
         min-width: 70px;
     }
-mat-row.inactive{
-    background-color: rgb(255 232 222);
+
+    mat-row.inactive {
+        background-color: rgb(255 232 222);
+    }
 }
+.container{
+    display: flex;
+    justify-content: end;
+    padding: 16px;
 }

@@ -6,12 +6,11 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore, StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule, provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { sidenavReducer } from './store/reducers/userinteraction.reducers';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(withFetch()), provideClientHydration(), provideAnimationsAsync(), 
-    provideStore({sidenavStatus: sidenavReducer})
-  ]
+  providers: [provideRouter(routes), provideHttpClient(withFetch()), provideClientHydration(), provideAnimationsAsync(),
+    provideStore({ sidenavStatus: sidenavReducer }), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SettlePopupComponent } from '../settle-popup/settle-popup.component';
 import { UpdatePopupComponent } from '../update-popup/update-popup.component';
+import { AddLabourComponent } from '../add-labour/add-labour.component';
 
 @Component({
   selector: 'app-site-labours',
@@ -30,12 +31,20 @@ export class SiteLaboursComponent {
       
     })
   }
+  
   updatePopUp(row: ILabour){
     this.dialog.open(UpdatePopupComponent, {maxWidth: '500px', minWidth: '300px', data: row}).afterClosed()
     .subscribe(d=>{
       console.log(d);
       
     })
+  }
+
+  addLabour(){
+    this.dialog.open(AddLabourComponent, {width: '500px'}).afterClosed()
+    .subscribe(data=>{
+
+    });
   }
 }
 

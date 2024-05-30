@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SettlePopupComponent } from './settle-popup/settle-popup.component';
 import { UpdatePopupComponent } from './update-popup/update-popup.component';
+import { AttendanceComponent } from './attendance/attendance.component';
 
 const routes: Routes = [
   {path: 'labours', component: SiteLaboursComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
     PaymentsComponent,
     SettlementComponent,
     SettlePopupComponent,
-    UpdatePopupComponent
+    UpdatePopupComponent,
+    AttendanceComponent
   ],
   imports: [
     CommonModule,
