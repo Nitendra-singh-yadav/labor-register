@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{data.row.name}}</mat-card-title>
+        <mat-card-subtitle>{{data.day| date: 'mediumDate'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{loading|async}}
+        <form [formGroup]="attendanceForm">
+            <mat-form-field>
+                <mat-select formControlName="status" name="item" placeholder="P/A">
+                    <mat-option *ngFor="let item of ['P', 'A']" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput placeholder="Payment" formControlName="payment">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <div>
+            <button class="updaten-btn" mat-raised-button color="warn" (click)="update()">Update</button>
+            <button class="cancel-btn" mat-raised-button color="primary" (click)="dialogRef.close()" >Cancel</button>
+        </div>
+    </mat-card-actions>
+</mat-card>
+

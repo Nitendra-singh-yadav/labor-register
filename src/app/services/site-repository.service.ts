@@ -13,6 +13,8 @@ export class SiteRepositoryService {
 
   getSiteList(force: boolean): [Observable<boolean>, Observable<boolean>, Observable<ISite[]>]{
     const loading$ = this.store.select(getSiteLoadedSelect);
+    const loaded$ = this.store.select(getSiteLoadedSelect);
+    const error$ = this.store.select(getSiteLoadedSelect);
     return [loading$, error$, sites$]
   }
 }

@@ -1,0 +1,116 @@
+.attendance-container {
+    height: 400px;
+    // width: 550px;
+    max-width: 100%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 800px;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+
+  mat-cell, mat-header-cell{
+    // min-width: 100px;
+    display: flex;
+    border-right: 2px solid black;  }
+
+  mat-cell.present{
+    background-color: aquamarine;
+  }
+  mat-cell.absent{
+    background-color: coral;
+  }
+  .mat-column-filler {
+    padding: 0 8px;
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  .mat-mdc-header-cell, .mat-mdc-footer-cell, .mat-mdc-cell {
+    min-width: 100px;
+    box-sizing: border-box;
+    .cell-content{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      p{
+        margin: 0;
+      }
+      mat-chip{
+        height: 14px;
+        .mat-mdc-chip-action-label{
+          font-size: 10px;
+          font-weight: 500;
+        }
+      }
+    }
+    .edit-btn{
+      padding: 0;
+      height: 26px;
+      width: 26px;
+    }
+    mat-icon.edit-icon{
+      font-size: 16px;
+      height: 16px;
+      width: 16px;
+    }
+  }
+  
+  .mat-mdc-header-row, .mat-mdc-footer-row, .mat-mdc-row {
+    min-width: 1920px; /* 24 columns, 80px each */
+  }
+  
+  .mat-mdc-table-sticky-border-elem-top {
+    border-bottom: 2px solid midnightblue;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-right {
+    border-left: 2px solid midnightblue;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-bottom {
+    border-top: 2px solid midnightblue;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-left {
+    border-right: 2px solid midnightblue;
+  }
+  .mat-mdc-standard-chip {
+    --mdc-chip-label-text-color: #fff;
+  }
+
+  .navigator-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 16px;
+    div{
+      p{
+        margin: 10px;
+      }
+    }
+  }
+
+mat-card-content{
+  padding: 0;
+}

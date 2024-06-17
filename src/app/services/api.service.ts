@@ -11,5 +11,9 @@ export class ApiService {
   getAllSites(){
     
   }
+
+  getAttendance(siteId: string, date = new Date()){
+    return this.http.get(`${siteId}/attendance`, {date});
+  }
   
 }

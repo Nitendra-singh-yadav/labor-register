@@ -6,7 +6,7 @@ export const labourActionGroup = createActionGroup({
     events: {
         'List Labour': props<{labours: ILabour[]}>(),
         'List Labour Success': props<{labours: ILabour[]}>(),
-        'List Labour Failure': props<{labours: ILabour[]}>(),
+        'List Labour Failure': props<{error: any}>(),
         'Add Labour': props<{labour: ILabour}>(),
         'Add Labour success': props<{labour: ILabour}>(),
         'Add Labour failure': props<{labour: ILabour}>(),

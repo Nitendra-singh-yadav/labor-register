@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
 import { SettlePopupComponent } from './settle-popup/settle-popup.component';
 import { UpdatePopupComponent } from './update-popup/update-popup.component';
 import { AttendanceComponent } from './attendance/attendance.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
     MatTableModule,
     MatTabsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule
   ]
 })
 export class SiteDashboardModule { }

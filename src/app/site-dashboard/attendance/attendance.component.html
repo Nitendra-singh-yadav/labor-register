@@ -1,1 +1,57 @@
-<p>attendance works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Site 1</mat-card-title>
+        <mat-card-subtitle>Attendance</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="navigator-controls">
+            <button (click)="previous()" mat-icon-button color="primary"><mat-icon>chevron_left</mat-icon></button>
+            <div>
+                <p>
+                    {{selectedDate|async|date: 'MMM YYYY'}}
+                </p>
+            </div>
+            <button mat-icon-button (click)="next()" color="primary"><mat-icon>chevron_right</mat-icon></button>
+        </div>
+        <div class="attendance-container">
+            <mat-table #table [dataSource]="(labourAttendances|async) || []">
+                <ng-container matColumnDef="name" sticky>
+                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                </ng-container>
+                <ng-container *ngFor="let day of ((selectedMonthCols|async)||[]).slice(1)">
+                    <ng-container [matColumnDef]="day">
+                        <mat-header-cell *matHeaderCellDef> {{day |date:'MMM/d'}} </mat-header-cell>
+                        <mat-cell *matCellDef="let row"
+                            [ngClass]="{'present': row.attendance[day], 'absent': !row.attendance[day]}">
+                            <ng-container *ngIf="row.attendance[day]">
+                                <div class="cell-content">
+                                    <p>P</p>
+                                    <button class="edit-btn" mat-icon-button (click)="editAttendance(row, day)">
+                                        <mat-icon class="edit-icon">edit</mat-icon>
+                                    </button>
+
+                                    <mat-chip style="background-color: forestgreen;">
+                                        {{row.attendance[day].payment | currency: 'INR': 'symbol' : '1.0-0'}}
+                                    </mat-chip>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="!row.attendance[day]">
+                                <div class="cell-content">
+                                    <p>A</p>
+                                    <!-- Payment: {{row.attendance[day].payment}} -->
+                                    <button class="edit-btn" mat-icon-button
+                                        (click)="editAttendance(row, day)"><mat-icon
+                                            class="edit-icon">edit</mat-icon></button>
+                                </div>
+                            </ng-container>
+
+                        </mat-cell>
+                    </ng-container>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="selectedMonthCols | async"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: selectedMonthCols|async;"></mat-row>
+            </mat-table>
+        </div>
+    </mat-card-content>
+</mat-card>
